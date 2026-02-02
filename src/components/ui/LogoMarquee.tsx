@@ -9,25 +9,19 @@ const badges = [
     { src: "/tisax-certified-badge.png", alt: "TISAX Specialized" },
     { src: "/tisax-badge-alt.png", alt: "TISAX Assessment" },
     { src: "/iso-27001-badge.png", alt: "ISO/IEC 27001" },
-    { src: "/gdpr-certified-badge.png", alt: "GDPR Compliant" },
-    { src: "/tisax-certified-badge.png", alt: "VDA ISA Compliance" },
 ];
 
 export default function LogoMarquee() {
     return (
-        <div className="marquee-wrapper w-full opacity-60 hover:opacity-100 transition-opacity duration-700 pt-8 pb-16">
-            <div
-                className="marquee fadeout-horizontal"
-                style={{ "--numItems": 8 } as React.CSSProperties}
-            >
-                <div className="marquee-track">
+        <div className="w-full opacity-60 hover:opacity-100 transition-opacity duration-700 pt-8 pb-16">
+            <div className="max-w-7xl mx-auto px-4">
+                <div className="flex flex-wrap justify-center gap-8">
                     {badges.map((badge, i) => (
                         <div
                             key={i}
-                            className="marquee-item"
-                            style={{ "--item-position": i + 1 } as React.CSSProperties}
+                            className="w-[120px] aspect-square flex justify-center align-center items-center rounded-xl bg-surface border border-foreground/10 hover:border-primary hover:bg-surface-hover hover:scale-105 transition-all duration-300"
                         >
-                            <img src={badge.src} alt={badge.alt} className="w-full h-full object-contain" />
+                            <img src={badge.src} alt={badge.alt} className="w-[75%] h-auto object-contain" />
                         </div>
                     ))}
                 </div>
