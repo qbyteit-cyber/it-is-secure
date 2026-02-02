@@ -85,11 +85,11 @@ export default function Home() {
 
       {/* Content Sections */}
       <div className="relative z-10 w-full pb-16 sm:pb-32">
-        <TrustMarkers />
-        <AboutSection />
         <div id="services">
           <ServicesSection />
         </div>
+        <AboutSection />
+        <TrustMarkers />
         <Testimonials />
         <FAQSection />
         <div id="contact">
