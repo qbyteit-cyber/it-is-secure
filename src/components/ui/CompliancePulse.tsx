@@ -34,7 +34,7 @@ export function CompliancePulse() {
                     System Status
                 </span>
                 <span className="text-[12px] font-mono font-bold text-foreground leading-none">
-                    Real-Time Compliance Pulse
+                    It Is Secure
                 </span>
             </div>
         </div>
