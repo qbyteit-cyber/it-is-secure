@@ -44,8 +44,8 @@ export default function MissionCriticalLanding() {
                         </motion.div>
 
                         <h1 className="text-6xl md:text-8xl font-display font-black text-foreground mb-8 tracking-tighter leading-[0.9]">
-                            <DecryptText text="Securing the Future" delay={500} /><br />
-                            <DecryptText text="of Mobility" delay={1500} className="text-primary" />
+                            <DecryptText text="Securing The Future" delay={500} /><br />
+                            <DecryptText text="Of Automotive Industry" delay={1500} className="text-primary" />
                         </h1>
 
                         <motion.p
