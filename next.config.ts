@@ -31,20 +31,20 @@ const nextConfig: NextConfig = {
             value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()',
           },
           {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block',
-          },
-          {
             key: 'Cross-Origin-Opener-Policy',
             value: 'same-origin',
           },
           {
             key: 'Cross-Origin-Embedder-Policy',
-            value: 'credentialless',
+            value: 'require-corp',
           },
           {
-            key: 'Cross-Origin-Resource-Policy',
-            value: 'same-origin',
+            key: 'Access-Control-Allow-Origin',
+            value: 'https://it-is-secure.vercel.app',
+          },
+          {
+            key: 'Vary',
+            value: 'Origin',
           },
         ],
       },
