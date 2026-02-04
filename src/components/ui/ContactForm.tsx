@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactForm() {
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -176,6 +177,14 @@ export default function ContactForm() {
                         </>
                     )}
                 </button>
+
+                {/* GDPR Note */}
+                <p className="text-center text-[10px] font-mono text-foreground/30 uppercase tracking-widest">
+                    By sending a message, you acknowledge our{" "}
+                    <Link href="/gdpr" className="text-primary hover:underline underline-offset-4">
+                        GDPR Compliance Policy
+                    </Link>
+                </p>
             </div>
         </motion.form>
     );
