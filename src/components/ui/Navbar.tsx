@@ -123,12 +123,12 @@ export default function Navbar({ onOpenCalculator }: NavbarProps) {
                                                     animate={{ opacity: 1, y: 0 }}
                                                     exit={{ opacity: 0, y: 15 }}
                                                     transition={{ duration: 0.2, ease: "easeOut" }}
-                                                    className="absolute top-full left-1/2 -translate-x-[20%] mt-4 w-[850px] bg-surface border border-foreground/10 rounded-2xl shadow-2xl p-10 z-50 overflow-hidden"
+                                                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[1100px] bg-surface border border-foreground/10 rounded-2xl shadow-2xl p-12 z-50 overflow-hidden"
                                                 >
                                                     {/* Decorative background pulse */}
                                                     <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
-                                                    <div className="grid grid-cols-3 gap-12 relative z-10">
+                                                    <div className="grid grid-cols-3 gap-16 relative z-10">
                                                         {megamenuData.map((category, idx) => (
                                                             <div key={idx} className="space-y-6">
                                                                 <h3 className="text-sm font-bold text-foreground/80 border-b border-foreground/5 pb-4">
