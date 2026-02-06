@@ -78,9 +78,9 @@ export default function Navbar({ onOpenCalculator }: NavbarProps) {
                         {/* Logo */}
                         <Link href="/" className="flex items-center">
                             <img
-                                src="/ITIS Secure logo transparent-crop.png"
+                                src="/logo-branding.png"
                                 alt="ITIS Secure - Information Security Consulting"
-                                className="h-10 w-auto"
+                                className="h-12 w-auto"
                             />
                         </Link>
 

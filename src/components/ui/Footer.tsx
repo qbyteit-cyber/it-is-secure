@@ -34,9 +34,11 @@ export default function Footer() {
 
                     {/* Company Info */}
                     <div>
-                        <h3 className="text-xl font-display font-bold text-foreground mb-4">
-                            ITIS Secure
-                        </h3>
+                        <img
+                            src="/logo-branding.png"
+                            alt="ITIS Secure"
+                            className="h-10 w-auto mb-6"
+                        />
                         <p className="text-foreground/50 text-sm leading-relaxed mb-4">
                             World-class security audit firm specializing in TISAX, ISO 27001, and automotive compliance standards.
                         </p>
