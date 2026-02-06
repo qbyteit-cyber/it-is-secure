@@ -132,7 +132,7 @@ export default function Navbar({ onOpenCalculator }: NavbarProps) {
                                                     <div className="grid grid-cols-3 gap-12 relative z-10">
                                                         {megamenuData.map((category, idx) => (
                                                             <div key={idx} className="space-y-6">
-                                                                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-foreground/40 border-b border-foreground/5 pb-4">
+                                                                <h3 className="text-sm font-bold text-foreground/80 border-b border-foreground/5 pb-4">
                                                                     {category.title}
                                                                 </h3>
                                                                 <ul className="space-y-3">
@@ -140,9 +140,9 @@ export default function Navbar({ onOpenCalculator }: NavbarProps) {
                                                                         <li key={itemIdx}>
                                                                             <Link
                                                                                 href={item.href}
-                                                                                className="text-sm font-bold text-foreground/70 hover:text-primary transition-all duration-300 flex items-center group"
+                                                                                className="text-sm font-medium text-foreground/60 hover:text-primary transition-all duration-300 flex items-center group"
                                                                             >
-                                                                                <span className="w-1.5 h-1.5 bg-primary/0 group-hover:bg-primary rounded-full mr-0 group-hover:mr-3 transition-all duration-300 shrink-0" />
+                                                                                <span className="w-1 h-1 bg-primary/0 group-hover:bg-primary rounded-full mr-0 group-hover:mr-3 transition-all duration-300 shrink-0" />
                                                                                 {item.name}
                                                                             </Link>
                                                                         </li>
