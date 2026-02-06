@@ -8,7 +8,11 @@ import { TisaxPipeline } from "./TisaxPipeline";
 import { TechnicalCounter } from "./TechnicalCounter";
 import { Shield, Lock, Activity, Cpu, ChevronRight } from "lucide-react";
 
-export default function MissionCriticalLanding() {
+interface MissionCriticalLandingProps {
+    onOpenCalculator?: () => void;
+}
+
+export default function MissionCriticalLanding({ onOpenCalculator }: MissionCriticalLandingProps) {
     return (
         <div className="relative min-h-screen bg-blueprint">
             {/* Top Status Bar (Dashboard Style) */}
@@ -64,7 +68,10 @@ export default function MissionCriticalLanding() {
                             transition={{ delay: 2.2 }}
                             className="flex flex-col sm:flex-row gap-6"
                         >
-                            <button className="px-10 py-5 bg-primary text-white font-black rounded-xl hover:scale-105 transition-all shadow-[0_15px_40px_rgba(8,97,242,0.3)] flex items-center gap-3">
+                            <button
+                                onClick={onOpenCalculator}
+                                className="px-10 py-5 bg-primary text-white font-black rounded-xl hover:scale-105 transition-all shadow-[0_15px_40px_rgba(8,97,242,0.3)] flex items-center gap-3"
+                            >
                                 INITIATE AUDIT READINESS
                                 <ChevronRight className="w-5 h-5" />
                             </button>

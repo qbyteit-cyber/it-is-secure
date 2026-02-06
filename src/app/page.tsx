@@ -15,6 +15,7 @@ import FeaturedProjects from "@/components/ui/FeaturedProjects";
 import LogoMarquee from "@/components/ui/LogoMarquee";
 
 import MissionCriticalLanding from "@/components/ui/MissionCriticalLanding";
+import Navbar from "@/components/ui/Navbar";
 
 const SecurityMesh = dynamic(() => import("@/components/canvas/SecurityMesh"), {
   ssr: false,
@@ -31,20 +32,37 @@ export default function Home() {
       </div>
 
       <div className="relative z-10">
-        <MissionCriticalLanding />
+        <Navbar onOpenCalculator={() => setCalculatorOpen(true)} />
+
+        <MissionCriticalLanding onOpenCalculator={() => setCalculatorOpen(true)} />
+
+        <LogoMarquee />
 
         <div id="services">
           <ServicesSection />
         </div>
 
-        <AboutSection />
-        <TrustMarkers />
-        <FeaturedProjects />
-        <Testimonials />
-        <FAQSection />
+        <div id="about">
+          <AboutSection />
+        </div>
 
         <div id="contact">
           <ContactSection />
+        </div>
+
+        {/* Reorganized Sections - Accessible via Menu */}
+        <TrustMarkers />
+
+        <div id="projects">
+          <FeaturedProjects />
+        </div>
+
+        <div id="testimonials">
+          <Testimonials />
+        </div>
+
+        <div id="faq">
+          <FAQSection />
         </div>
 
         <Footer />

@@ -6,7 +6,11 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
 
-export default function Navbar() {
+interface NavbarProps {
+    onOpenCalculator?: () => void;
+}
+
+export default function Navbar({ onOpenCalculator }: NavbarProps) {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -21,7 +25,10 @@ export default function Navbar() {
 
     const navLinks = [
         { href: "#services", label: "Services" },
+        { href: "#projects", label: "Projects" },
         { href: "#about", label: "About" },
+        { href: "#testimonials", label: "Testimonials" },
+        { href: "#faq", label: "FAQ" },
         { href: "#contact", label: "Contact" },
     ];
 
@@ -57,7 +64,10 @@ export default function Navbar() {
                             ))}
                             <div className="flex items-center gap-4 ml-4 pl-4 border-l border-foreground/10">
                                 <ThemeToggle />
-                                <button className="px-6 py-2 bg-transparent border border-primary text-primary font-bold rounded-lg hover:bg-primary/5 hover:shadow-[0_0_20px_rgba(8,97,242,0.2)] transition-all text-sm">
+                                <button
+                                    onClick={onOpenCalculator}
+                                    className="px-6 py-2 bg-transparent border border-primary text-primary font-bold rounded-lg hover:bg-primary/5 hover:shadow-[0_0_20px_rgba(8,97,242,0.2)] transition-all text-sm"
+                                >
                                     Get Started
                                 </button>
                             </div>
@@ -104,7 +114,13 @@ export default function Navbar() {
                                         {link.label}
                                     </a>
                                 ))}
-                                <button className="w-full px-6 py-3 bg-transparent border border-primary text-primary font-bold rounded-lg hover:bg-primary/5 hover:shadow-[0_0_20px_rgba(8,97,242,0.2)] transition-all mt-2">
+                                <button
+                                    onClick={() => {
+                                        onOpenCalculator?.();
+                                        setIsMobileMenuOpen(false);
+                                    }}
+                                    className="w-full px-6 py-3 bg-transparent border border-primary text-primary font-bold rounded-lg hover:bg-primary/5 hover:shadow-[0_0_20px_rgba(8,97,242,0.2)] transition-all mt-2"
+                                >
                                     Get Started
                                 </button>
                             </div>
