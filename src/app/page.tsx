@@ -11,7 +11,6 @@ import Testimonials from "@/components/ui/Testimonials";
 import AboutSection from "@/components/ui/AboutSection";
 import FAQSection from "@/components/ui/FAQSection";
 import FeaturedProjects from "@/components/ui/FeaturedProjects";
-import LogoMarquee from "@/components/ui/LogoMarquee";
 
 import MissionCriticalLanding from "@/components/ui/MissionCriticalLanding";
 import Navbar from "@/components/ui/Navbar";
@@ -34,8 +33,6 @@ export default function Home() {
         <Navbar onOpenCalculator={() => setCalculatorOpen(true)} />
 
         <MissionCriticalLanding onOpenCalculator={() => setCalculatorOpen(true)} />
-
-        <LogoMarquee />
 
         <div id="about">
           <AboutSection />

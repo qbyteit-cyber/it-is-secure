@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { TerminalPulse } from "./TerminalPulse";
 import { CompliancePulse } from "./CompliancePulse";
 import { TechnicalCounter } from "./TechnicalCounter";
+import LogoMarquee from "./LogoMarquee";
 import { Shield, Lock, Activity, Cpu, ChevronRight } from "lucide-react";
 
 interface MissionCriticalLandingProps {
@@ -81,15 +82,10 @@ export default function MissionCriticalLanding({ onOpenCalculator }: MissionCrit
                 </div>
             </section>
 
-            {/* Data Stats Section */}
-            <section className="py-20 border-y border-foreground/5 bg-surface/30 backdrop-blur-sm">
+            {/* Data Stats Section - Replaced with Badge Marquee */}
+            <section className="py-12 border-y border-foreground/5 bg-surface/30 backdrop-blur-sm">
                 <div className="max-w-7xl mx-auto px-8">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
-                        <TechnicalCounter value={100} suffix="%" label="Compliance Accuracy" />
-                        <TechnicalCounter value={5000} suffix="+" label="Audit Defense Hours" />
-                        <TechnicalCounter value={3} suffix="" label="Core Industries Secured" />
-                        <TechnicalCounter value={98} suffix="%" label="First-Time Pass Rate" />
-                    </div>
+                    <LogoMarquee />
                 </div>
             </section>
 

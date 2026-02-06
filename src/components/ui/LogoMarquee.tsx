@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { motion } from "framer-motion";
 
 const badges = [
     { src: "/tisax-badge-alt.png", alt: "TISAX Certified" },
@@ -12,20 +12,39 @@ const badges = [
 ];
 
 export default function LogoMarquee() {
+    // Duplicate the badges for a seamless loop
+    const allBadges = [...badges, ...badges];
+
     return (
-        <div className="w-full opacity-60 hover:opacity-100 transition-opacity duration-700 pt-8 pb-16">
-            <div className="max-w-7xl mx-auto px-4">
-                <div className="flex flex-wrap justify-center gap-8">
-                    {badges.map((badge, i) => (
-                        <div
-                            key={i}
-                            className="w-[120px] aspect-square flex justify-center align-center items-center rounded-xl bg-surface border border-foreground/10 hover:border-primary hover:bg-surface-hover hover:scale-105 transition-all duration-300"
-                        >
-                            <img src={badge.src} alt={badge.alt} className="w-[75%] h-auto object-contain" />
-                        </div>
-                    ))}
-                </div>
-            </div>
+        <div className="w-full py-6 overflow-hidden relative group">
+            {/* Masking Gradients */}
+            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
+            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
+
+            <motion.div
+                className="flex gap-8 items-center"
+                animate={{
+                    x: ["0%", "-50%"],
+                }}
+                transition={{
+                    duration: 30,
+                    ease: "linear",
+                    repeat: Infinity,
+                }}
+            >
+                {allBadges.map((badge, i) => (
+                    <div
+                        key={i}
+                        className="flex-shrink-0 w-[140px] h-[60px] flex items-center justify-center grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                    >
+                        <img
+                            src={badge.src}
+                            alt={badge.alt}
+                            className="h-full w-auto object-contain"
+                        />
+                    </div>
+                ))}
+            </motion.div>
         </div>
     );
 }
