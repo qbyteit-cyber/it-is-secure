@@ -58,7 +58,7 @@ export default function MissionCriticalLanding({ onOpenCalculator }: MissionCrit
                             transition={{ delay: 2.2 }}
                             className="text-xl text-foreground/60 max-w-2xl mb-12 font-mono leading-relaxed"
                         >
-                            Direct technical authority for TISAX®, Cyber, and Aerospace security assessments. We don't speak marketing. We build audit-proof high-integrity ecosystems.
+                            Direct technical authority for TISAX®, Aerospace and Defence security assessments. We don't speak marketing. We create audit-proof high-integrity ecosystems, that scale with your business.
                         </motion.p>
 
                         <motion.div
