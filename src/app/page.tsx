@@ -10,7 +10,7 @@ import ReadinessCalculator from "@/components/ui/ReadinessCalculator";
 
 import MissionCriticalLanding from "@/components/ui/MissionCriticalLanding";
 import Navbar from "@/components/ui/Navbar";
-import ServicesPipeline from "@/components/ui/ServicesPipeline";
+import ServicesSection from "@/components/ui/ServicesSection";
 
 const SecurityMesh = dynamic(() => import("@/components/canvas/SecurityMesh"), {
   ssr: false,
@@ -32,17 +32,12 @@ export default function Home() {
         <MissionCriticalLanding onOpenCalculator={() => setCalculatorOpen(true)} />
 
         <div id="services">
-          <ServicesPipeline />
-        </div>
-
-        <div id="about">
-          <AboutSection />
+          <ServicesSection />
         </div>
 
         <div id="contact">
           <ContactSection />
         </div>
-
 
         <Footer />
       </div>

@@ -1,45 +1,46 @@
 @import "tailwindcss";
 
 :root {
-  /* Common Brand Colors */
-  --color-primary: #0861F2;
-  --color-secondary: #C9A063;
-  --color-accent: #0861F2;
+  /* OPSWAT Brand Colors */
+  --color-primary: #0056D2;
+  /* OPSWAT Blue */
+  --color-secondary: #00A3E0;
+  /* Light Blue Accent */
+  --color-accent: #0056D2;
+  --color-threat: #FF3B30;
+  /* For risk/threat signaling */
 
-  /* Light Theme */
+  /* Light Theme - Clean, Enterprise White */
   --background: #FFFFFF;
-  --foreground: #0F172A;
-  --color-surface: #F8FAFC;
-  --color-surface-hover: #F1F5F9;
-  --color-muted: #64748B;
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(15, 23, 42, 0.1);
+  --foreground: #0A0A0A;
+  --color-surface: #F4F7FA;
+  --color-surface-hover: #E8EDF5;
+  --color-muted: #4A5568;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 86, 210, 0.1);
   --glass-card-bg: #FFFFFF;
-  --glass-card-border: rgba(15, 23, 42, 0.08);
-  --glass-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --glass-card-border: rgba(0, 86, 210, 0.08);
+  --glass-card-shadow: 0 4px 12px rgba(0, 86, 210, 0.05);
   --fog-color: #FFFFFF;
 }
 
 .dark {
-  /* Digital Sovereignty - Mercedes-Benz Dashboard Aesthetic */
-  --background: #050505;
-  /* Eclipse Black */
-  --foreground: #F8FAFC;
-  --color-primary: #0861F2;
-  /* Royal Blue */
-  --color-secondary: #C9A063;
-  /* Metallic Gold */
-  --color-accent: #0861F2;
-  --color-surface: #0A0A0A;
-  --color-surface-hover: #121212;
-  --color-muted: #64748B;
-  --glass-bg: rgba(10, 10, 10, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-card-bg: rgba(5, 5, 5, 0.8);
-  --glass-card-border: rgba(255, 255, 255, 0.08);
-  --glass-card-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
-  --fog-color: #050505;
-  --grid-color: rgba(8, 97, 242, 0.03);
+  /* OPSWAT Dark - High Contrast Professional */
+  --background: #000000;
+  --foreground: #FFFFFF;
+  --color-primary: #0056D2;
+  --color-secondary: #00A3E0;
+  --color-accent: #0056D2;
+  --color-surface: #0D1117;
+  --color-surface-hover: #161B22;
+  --color-muted: #8B949E;
+  --glass-bg: rgba(13, 17, 23, 0.8);
+  --glass-border: rgba(0, 86, 210, 0.2);
+  --glass-card-bg: #0D1117;
+  --glass-card-border: rgba(255, 255, 255, 0.1);
+  --glass-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --fog-color: #000000;
+  --grid-color: rgba(0, 86, 210, 0.05);
 }
 
 .bg-blueprint {
@@ -59,15 +60,36 @@
   --color-surface: var(--color-surface);
   --color-surface-hover: var(--color-surface-hover);
   --color-muted: var(--color-muted);
+  --color-threat: var(--color-threat);
 
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-ibm-plex-sans);
+  --font-sans: var(--font-roboto);
+  --font-display: var(--font-outfit);
+}
+
+.bg-opswat-grid {
+  background-image:
+    repeating-linear-gradient(135deg,
+      rgba(0, 86, 210, 0.05) 0,
+      rgba(0, 86, 210, 0.05) 1px,
+      transparent 0,
+      transparent 20px);
+}
+
+.bg-opswat-gradient {
+  background: linear-gradient(135deg, #0056D2 0%, #00A3E0 100%);
+}
+
+.opswat-glass {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 86, 210, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 86, 210, 0.05);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-roboto), sans-serif;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }

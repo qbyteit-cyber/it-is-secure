@@ -39,23 +39,46 @@ export default function ContactSection() {
                         </motion.p>
 
                         <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
-                            className="space-y-4"
                         >
-                            <p className="text-sm text-foreground/40">
-                                ✓ Expert auditors with 10+ years experience<br />
-                                ✓ Trusted by 100+ automotive suppliers<br />
-                                ✓ 98% first-time pass rate
+                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/5 border border-primary/20 rounded-md mb-8">
+                                <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                                <span className="text-[10px] font-sans font-black text-primary uppercase tracking-[0.2em]">
+                                    Secure your roadmap
+                                </span>
+                            </div>
+
+                            <h2 className="text-5xl md:text-7xl font-display font-black leading-[0.9] tracking-tighter text-foreground mb-8">
+                                Ready to be <br />
+                                <span className="text-primary italic">Audit Proof?</span>
+                            </h2>
+
+                            <p className="text-xl text-foreground/60 leading-relaxed font-sans max-w-md mb-12">
+                                Partner with ITIS Secure to navigate the complex landscape of automotive and aerospace certifications with zero technical debt.
                             </p>
+
+                            <div className="space-y-6 pt-8 border-t border-foreground/5">
+                                {[
+                                    "Field-certified lead auditors only",
+                                    "Depth in TISAX®, NIS2, and ISO 27001",
+                                    "98% first-time certification success"
+                                ].map((item, i) => (
+                                    <div key={i} className="flex items-center gap-4 text-sm font-sans font-bold text-foreground/70">
+                                        <div className="w-2 h-2 rounded-full bg-primary" />
+                                        {item}
+                                    </div>
+                                ))}
+                            </div>
                         </motion.div>
                     </div>
 
                     {/* Right Column: Contact Form */}
-                    <div className="flex flex-col justify-center lg:pl-12 border-t lg:border-t-0 lg:border-l border-foreground/10 pt-8 lg:pt-0">
-                        <ContactForm />
+                    <div className="flex flex-col justify-center">
+                        <div className="p-2 border border-foreground/5 rounded-xl bg-background/50 backdrop-blur-sm">
+                            <ContactForm />
+                        </div>
                     </div>
                 </div>
             </div>

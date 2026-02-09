@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import { Inter, IBM_Plex_Sans } from "next/font/google";
+import { Roboto, Outfit } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import Navbar from "@/components/ui/Navbar";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
-// Optimize fonts - Enterprise typography
-const inter = Inter({
+// Optimize fonts - OPSWAT style typography
+const roboto = Roboto({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-roboto",
   display: "swap",
 });
 
-const ibmPlexSans = IBM_Plex_Sans({
+const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-ibm-plex-sans",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-outfit",
   display: "swap",
 });
 
@@ -89,7 +90,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${inter.variable} ${ibmPlexSans.variable}`}>
+    <html lang="en" className={`${roboto.variable} ${outfit.variable}`}>
       <head>
         <script
           type="application/ld+json"

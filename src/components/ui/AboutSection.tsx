@@ -37,37 +37,39 @@ export default function AboutSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
-                        <span className="text-sm font-mono text-primary uppercase tracking-wider">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/5 border border-primary/20 rounded-md mb-8">
+                        <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                        <span className="text-[10px] font-sans font-black text-primary uppercase tracking-[0.2em]">
                             About ITIS Secure
                         </span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
-                        Your Trusted Partner in Automotive Security Compliance
+                    <h2 className="text-5xl md:text-6xl font-display font-black text-foreground mb-8 tracking-tighter leading-tight">
+                        Securing the <br />
+                        <span className="text-primary italic">Global Engine</span>
                     </h2>
 
-                    <p className="text-lg text-foreground/70 leading-relaxed mb-6">
-                        ITIS Secure is a specialized security audit firm dedicated to helping automotive suppliers and manufacturers achieve and maintain compliance with TISAX®, ISO 27001, and GDPR standards.
+                    <p className="text-xl text-foreground/70 leading-relaxed mb-8 font-sans">
+                        ITIS Secure is a high-authority cybersecurity firm dedicated to technical sovereignty in the automotive, aerospace, and defense sectors.
                     </p>
 
-                    <p className="text-foreground/60 leading-relaxed mb-8">
-                        Founded by former automotive security engineers and compliance officers, we understand the unique challenges of protecting sensitive data in the automotive supply chain. Our mission is to make world-class security audits accessible, efficient, and results-oriented.
+                    <p className="text-foreground/50 leading-relaxed mb-12 font-sans text-sm">
+                        Founded by field engineers and lead auditors, we provide zero-compromise security assessments and compliance engineering. Our mission is to transform complex regulatory requirements into audit-proof technical infrastructure.
                     </p>
 
                     {/* Stats */}
-                    <div className="grid grid-cols-3 gap-6">
+                    <div className="grid grid-cols-3 gap-12 pt-8 border-t border-foreground/5">
                         <div>
-                            <div className="text-3xl font-display font-bold text-primary mb-1">10+</div>
-                            <div className="text-sm text-foreground/50">Years Experience</div>
+                            <div className="text-4xl font-display font-black text-primary mb-2">15+</div>
+                            <div className="text-[10px] font-sans font-black text-foreground/40 uppercase tracking-widest">Years Depth</div>
                         </div>
                         <div>
-                            <div className="text-3xl font-display font-bold text-primary mb-1">10+</div>
-                            <div className="text-sm text-foreground/50">Clients Served</div>
+                            <div className="text-4xl font-display font-black text-primary mb-2">250+</div>
+                            <div className="text-[10px] font-sans font-black text-foreground/40 uppercase tracking-widest">Audits Done</div>
                         </div>
                         <div>
-                            <div className="text-3xl font-display font-bold text-primary mb-1">100%</div>
-                            <div className="text-sm text-foreground/50">Success Rate</div>
+                            <div className="text-4xl font-display font-black text-primary mb-2">100%</div>
+                            <div className="text-[10px] font-sans font-black text-foreground/40 uppercase tracking-widest">Acceptance</div>
                         </div>
                     </div>
                 </motion.div>
@@ -83,19 +85,19 @@ export default function AboutSection() {
                     {features.map((feature, index) => (
                         <motion.div
                             key={feature.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="glass-card p-6 rounded-xl group hover:border-primary/20 transition-all"
+                            className="bg-surface border border-foreground/5 p-8 rounded-xl group hover:border-primary/40 transition-all hover:shadow-2xl hover:shadow-primary/5"
                         >
-                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors">
-                                <feature.icon className="w-6 h-6 text-primary" />
+                            <div className="w-14 h-14 rounded-lg bg-primary/5 mb-8 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                                <feature.icon className="w-7 h-7" />
                             </div>
-                            <h3 className="text-lg font-display font-semibold text-foreground mb-2">
+                            <h3 className="text-xl font-display font-black text-foreground mb-4 tracking-tight">
                                 {feature.title}
                             </h3>
-                            <p className="text-sm text-foreground/60 leading-relaxed">
+                            <p className="text-sm text-foreground/50 leading-relaxed font-sans">
                                 {feature.description}
                             </p>
                         </motion.div>

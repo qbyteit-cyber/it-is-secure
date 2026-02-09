@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, Database, Lock, FileKey, Shield, ChevronRight } from "lucide-react";
+import { ShieldCheck, Database, Lock, FileKey, Shield, ChevronRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const services = [
@@ -41,10 +41,10 @@ export default function ServicesPipeline() {
     return (
         <section className="py-32 px-8 relative overflow-hidden">
             <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-20">
-                    <span className="text-[10px] font-mono font-bold text-primary uppercase tracking-[0.4em] mb-4 block">Our Core Expertise</span>
-                    <h2 className="text-4xl md:text-6xl font-display font-black text-foreground tracking-tighter">
-                        Cyber Security Services
+                <div className="text-center mb-24">
+                    <span className="text-[10px] font-sans font-black text-primary uppercase tracking-[0.4em] mb-4 block">Proven Security Architectures</span>
+                    <h2 className="text-5xl md:text-7xl font-display font-black text-foreground tracking-tighter">
+                        Solution <span className="text-primary italic">Ecosystem</span>
                     </h2>
                 </div>
 
@@ -71,25 +71,18 @@ export default function ServicesPipeline() {
 
                                 {/* Visual Node */}
                                 <div className="relative mb-12">
-                                    <div className="w-16 h-16 rounded-2xl bg-surface border border-foreground/10 flex items-center justify-center relative z-10 group-hover:border-primary group-hover:shadow-[0_0_30px_rgba(8,97,242,0.2)] transition-all duration-500 overflow-hidden">
-                                        <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors" />
-                                        <service.icon className="w-8 h-8 text-foreground group-hover:text-primary transition-colors" />
+                                    <div className="w-16 h-16 rounded-xl bg-background border border-foreground/10 flex items-center justify-center relative z-10 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_30px_rgba(0,86,210,0.3)] transition-all duration-500">
+                                        <service.icon className="w-8 h-8 text-foreground group-hover:text-white transition-colors" />
                                     </div>
-
-                                    {/* Connection Pulse */}
                                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 border border-primary/0 rounded-full group-hover:border-primary/20 animate-ping pointer-events-none" />
                                 </div>
 
                                 {/* Text Content */}
-                                <div className="space-y-6">
-                                    <div className="pb-4 relative">
-                                        <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors leading-tight min-h-[3rem] flex items-end">
-                                            {service.title}
-                                        </h3>
-                                        {/* Hover Line Highlight */}
-                                        <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-500" />
-                                    </div>
-                                    <p className="text-sm text-foreground/50 leading-relaxed font-mono">
+                                <div className="space-y-4">
+                                    <h3 className="text-xl font-display font-black text-foreground group-hover:text-primary transition-colors leading-tight min-h-[3.5rem] flex items-end">
+                                        {service.title}
+                                    </h3>
+                                    <p className="text-[13px] text-foreground/50 leading-relaxed font-sans">
                                         {service.desc}
                                     </p>
                                 </div>
@@ -103,14 +96,14 @@ export default function ServicesPipeline() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.8 }}
-                    className="mt-20 flex justify-center"
+                    className="mt-24 flex justify-center"
                 >
                     <Link
                         href="/services"
-                        className="group flex items-center gap-3 px-8 py-4 bg-primary text-white font-black rounded-xl hover:scale-105 transition-all shadow-[0_15px_40px_rgba(8,97,242,0.3)]"
+                        className="group flex items-center gap-3 px-10 py-5 bg-primary text-white font-bold rounded-md hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 text-sm uppercase tracking-widest"
                     >
-                        EXPLORE COMPLIANCE ECOSYSTEM
-                        <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        Explore Security Stack
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </motion.div>
             </div>

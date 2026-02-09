@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -23,12 +23,12 @@ const megamenuData = [
     {
         title: "Security Management Frameworks",
         items: [
-            { name: "ISO 27001", href: "/services#iso" },
-            { name: "TISAX", href: "/services#tisax" },
-            { name: "NIS2", href: "/services#nis2" },
-            { name: "DORA", href: "/services#dora" },
-            { name: "GDPR", href: "/services#gdpr" },
-            { name: "TPISR", href: "/services#tpisr-as9100d" },
+            { name: "ISO 27001", href: "/services/iso-27001" },
+            { name: "TISAX", href: "/services/tisax" },
+            { name: "NIS2", href: "/services/nis2" },
+            { name: "DORA", href: "/services/dora" },
+            { name: "GDPR", href: "/services/gdpr" },
+            { name: "TPISR", href: "/services/tpisr" },
             { name: "Other Frameworks", href: "/services#others" },
         ],
     },
@@ -36,13 +36,13 @@ const megamenuData = [
         title: "Outsourcing Security Roles",
         href: "/outsourcing-security-roles",
         items: [
-            { name: "Cybersecurity Architect", href: "/services#architect" },
-            { name: "Cybersecurity Auditor", href: "/services#auditor" },
-            { name: "Cybersecurity Manager", href: "/services#manager" },
-            { name: "Internal Auditor", href: "/services#internal-auditor" },
-            { name: "Service Data Privacy Office", href: "/services#dpo" },
-            { name: "Risk Management Specialist", href: "/services#risk" },
-            { name: "Expert Security Manager", href: "/services#expert-manager" },
+            { name: "Cybersecurity Architect", href: "/services/outsourced-roles/architect" },
+            { name: "Cybersecurity Auditor", href: "/services/outsourced-roles/auditor" },
+            { name: "Cybersecurity Manager", href: "/services/outsourced-roles/manager" },
+            { name: "Internal Auditor", href: "/services/outsourced-roles/internal-auditor" },
+            { name: "Service Data Privacy Office", href: "/services/outsourced-roles/sdpo" },
+            { name: "Risk Management Specialist", href: "/services/outsourced-roles/risk-specialist" },
+            { name: "Expert Security Manager", href: "/services/outsourced-roles/expert-manager" },
         ],
     },
 ];
@@ -74,9 +74,9 @@ export default function Navbar({ onOpenCalculator }: NavbarProps) {
                 initial={{ y: 0 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="fixed top-0 left-0 right-0 z-50 px-6 py-4"
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-2 px-6' : 'py-6 px-8'}`}
             >
-                <div className="max-w-7xl mx-auto glass-card rounded-2xl px-6 py-2 border border-foreground/10 shadow-lg transition-all duration-300">
+                <div className={`max-w-7xl mx-auto transition-all duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur-md shadow-sm border-b border-foreground/5 py-2 px-8 rounded-full' : 'bg-transparent py-0 px-0'}`}>
 
                     <div className="flex items-center justify-between">
                         {/* Logo */}
@@ -98,11 +98,11 @@ export default function Navbar({ onOpenCalculator }: NavbarProps) {
                                 >
                                     <a
                                         href={link.href}
-                                        className="text-foreground/70 hover:text-primary transition-colors text-sm font-bold flex items-center gap-1 py-4"
+                                        className="text-foreground/80 hover:text-primary transition-colors text-[13px] font-bold uppercase tracking-wider flex items-center gap-1.5 py-4"
                                     >
                                         {link.label}
                                         {link.hasMegamenu && (
-                                            <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isMegamenuOpen ? 'rotate-180 text-primary' : ''}`} />
+                                            <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${isMegamenuOpen ? 'rotate-180 text-primary' : ''}`} />
                                         )}
                                     </a>
 
@@ -127,34 +127,31 @@ export default function Navbar({ onOpenCalculator }: NavbarProps) {
                                                     animate={{ opacity: 1, y: 0 }}
                                                     exit={{ opacity: 0, y: 15 }}
                                                     transition={{ duration: 0.2, ease: "easeOut" }}
-                                                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[1100px] bg-surface border border-foreground/10 rounded-2xl shadow-2xl p-12 z-50 overflow-hidden"
+                                                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[1200px] bg-background border border-foreground/10 rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] p-12 z-50 overflow-hidden"
                                                 >
-                                                    {/* Decorative background pulse */}
-                                                    <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+                                                    <div className="grid grid-cols-4 gap-12 relative z-10">
+                                                        {/* Featured Column */}
+                                                        <div className="bg-primary/5 p-8 rounded-xl border border-primary/10">
+                                                            <div className="text-[10px] font-sans font-black text-primary uppercase tracking-[0.2em] mb-4">Featured Services</div>
+                                                            <h4 className="text-xl font-display font-extrabold mb-4 leading-tight">Critical Infrastructure <br /> Security</h4>
+                                                            <p className="text-xs text-foreground/60 mb-6 leading-relaxed">Ensure audit-readiness and technical sovereignty with our specialized automotive and aerospace compliance engineering.</p>
+                                                            <Link href="/services" className="text-xs font-bold text-primary flex items-center gap-2 hover:gap-3 transition-all">
+                                                                View Solutions <ArrowRight className="w-3 h-3" />
+                                                            </Link>
+                                                        </div>
 
-                                                    <div className="grid grid-cols-3 gap-16 relative z-10">
                                                         {megamenuData.map((category, idx) => (
                                                             <div key={idx} className="space-y-6">
-                                                                {category.href ? (
-                                                                    <Link
-                                                                        href={category.href}
-                                                                        className="text-sm font-bold text-foreground/80 border-b border-foreground/5 pb-4 block hover:text-primary transition-colors"
-                                                                    >
-                                                                        {category.title}
-                                                                    </Link>
-                                                                ) : (
-                                                                    <h3 className="text-sm font-bold text-foreground/80 border-b border-foreground/5 pb-4">
-                                                                        {category.title}
-                                                                    </h3>
-                                                                )}
-                                                                <ul className="space-y-3">
+                                                                <h3 className="text-[11px] font-sans font-black text-foreground/50 uppercase tracking-[0.2em] border-b border-foreground/5 pb-4">
+                                                                    {category.title}
+                                                                </h3>
+                                                                <ul className="space-y-4">
                                                                     {category.items.map((item, itemIdx) => (
                                                                         <li key={itemIdx}>
                                                                             <Link
                                                                                 href={item.href}
-                                                                                className="text-sm font-medium text-foreground/60 hover:text-primary transition-all duration-300 flex items-center group"
+                                                                                className="text-[13px] font-bold text-foreground/80 hover:text-primary transition-all duration-300 flex items-center group"
                                                                             >
-                                                                                <span className="w-1 h-1 bg-primary/0 group-hover:bg-primary rounded-full mr-0 group-hover:mr-3 transition-all duration-300 shrink-0" />
                                                                                 {item.name}
                                                                             </Link>
                                                                         </li>
@@ -173,7 +170,7 @@ export default function Navbar({ onOpenCalculator }: NavbarProps) {
                                 <ThemeToggle />
                                 <button
                                     onClick={onOpenCalculator}
-                                    className="px-6 py-2 bg-transparent border border-primary text-primary font-bold rounded-lg hover:bg-primary/5 hover:shadow-[0_0_20px_rgba(8,97,242,0.2)] transition-all text-sm"
+                                    className="px-5 py-2.5 bg-primary text-white font-bold rounded-md hover:bg-primary/90 transition-all text-[12px] uppercase tracking-widest shadow-lg shadow-primary/20"
                                 >
                                     Get Started
                                 </button>
