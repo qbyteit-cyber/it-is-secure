@@ -35,10 +35,9 @@ const megamenuData = [
     {
         title: "Outsourcing Security Roles",
         items: [
-            { name: "Cybersecurity Manager", href: "/services#manager" },
-            { name: "Cybersecurity Architect", href: "/services#architect" },
-            { name: "Cybersecurity Auditor", href: "/services#auditor" },
-            { name: "Risk Management Specialist", href: "/services#risk" },
+            { name: "Internal Auditor", href: "/services#auditor" },
+            { name: "Externalized service Data Privacy Office", href: "/services#dpo" },
+            { name: "Security Manager", href: "/services#manager" },
         ],
     },
 ];
