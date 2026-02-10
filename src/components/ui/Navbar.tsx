@@ -29,7 +29,7 @@ const megamenuData = [
             { name: "NIS2", href: "/services/nis2" },
             { name: "DORA", href: "/services/dora" },
             { name: "GDPR", href: "/services/gdpr" },
-            { name: "TPISR", href: "/services#tpisr-as9100d" },
+            { name: "TPISR", href: "/services/tpisr" },
             { name: "Other Frameworks", href: "/services#others" },
         ],
     },
