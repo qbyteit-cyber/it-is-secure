@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "@/components/providers/ThemeProvider";
-import { Sun, Moon } from "lucide-react";
+import { SunDim, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function ThemeToggle() {
@@ -17,22 +17,22 @@ export function ThemeToggle() {
                 {theme === "light" ? (
                     <motion.div
                         key="sun"
-                        initial={{ y: 20, opacity: 0, rotate: 45 }}
-                        animate={{ y: 0, opacity: 1, rotate: 0 }}
-                        exit={{ y: -20, opacity: 0, rotate: -45 }}
+                        initial={{ y: 20, opacity: 0, scale: 0.8 }}
+                        animate={{ y: 0, opacity: 1, scale: 1 }}
+                        exit={{ y: -20, opacity: 0, scale: 0.8 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <Sun className="w-5 h-5 text-amber-500" />
+                        <SunDim className="w-5 h-5 text-primary" />
                     </motion.div>
                 ) : (
                     <motion.div
                         key="moon"
-                        initial={{ y: 20, opacity: 0, rotate: 45 }}
-                        animate={{ y: 0, opacity: 1, rotate: 0 }}
-                        exit={{ y: -20, opacity: 0, rotate: -45 }}
+                        initial={{ y: 20, opacity: 0, scale: 0.8 }}
+                        animate={{ y: 0, opacity: 1, scale: 1 }}
+                        exit={{ y: -20, opacity: 0, scale: 0.8 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <Moon className="w-5 h-5 text-blue-400" />
+                        <Moon className="w-5 h-5 text-secondary" />
                     </motion.div>
                 )}
             </AnimatePresence>
