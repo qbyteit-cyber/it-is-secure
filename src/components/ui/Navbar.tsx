@@ -76,7 +76,7 @@ export default function Navbar({ onOpenCalculator }: NavbarProps) {
                 transition={{ duration: 0.3 }}
                 className="fixed top-0 left-0 right-0 z-50 px-6 py-4"
             >
-                <div className="max-w-7xl mx-auto glass-card rounded-2xl px-6 py-2 border border-foreground/10 shadow-lg transition-all duration-300">
+                <div className="max-w-7xl mx-auto bg-foreground/5 backdrop-blur-md rounded-2xl px-6 py-2 border border-foreground/10 shadow-lg transition-all duration-300">
 
                     <div className="flex items-center justify-between">
                         {/* Logo */}
@@ -209,7 +209,7 @@ export default function Navbar({ onOpenCalculator }: NavbarProps) {
                         transition={{ duration: 0.2 }}
                         className="fixed top-20 left-4 right-4 z-40 md:hidden"
                     >
-                        <div className="glass-card rounded-2xl p-6 border border-foreground/10">
+                        <div className="bg-foreground/10 backdrop-blur-xl rounded-2xl p-6 border border-foreground/10">
                             <div className="flex flex-col gap-4">
                                 {navLinks.map((link) => (
                                     <div key={link.href}>
