@@ -28,7 +28,7 @@ const megamenuData = [
             { name: "TISAX", href: "/services/tisax" },
             { name: "NIS2", href: "/services/nis2" },
             { name: "DORA", href: "/services/dora" },
-            { name: "GDPR", href: "/services#gdpr" },
+            { name: "GDPR", href: "/services/gdpr" },
             { name: "TPISR", href: "/services#tpisr-as9100d" },
             { name: "Other Frameworks", href: "/services#others" },
         ],
