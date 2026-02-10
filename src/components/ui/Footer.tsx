@@ -205,12 +205,12 @@ export default function Footer({ onOpenCalculator }: FooterProps) {
                         <Link href="/privacy" className="text-foreground/40 hover:text-primary transition-colors text-sm">
                             Privacy Policy
                         </Link>
-                        <a href="#" className="text-foreground/40 hover:text-primary transition-colors text-sm">
+                        <Link href="/terms" className="text-foreground/40 hover:text-primary transition-colors text-sm">
                             Terms of Service
-                        </a>
-                        <a href="#" className="text-foreground/40 hover:text-primary transition-colors text-sm">
+                        </Link>
+                        <Link href="/cookies" className="text-foreground/40 hover:text-primary transition-colors text-sm">
                             Cookie Policy
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
