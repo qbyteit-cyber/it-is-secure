@@ -25,7 +25,7 @@ const megamenuData = [
         title: "Security Management Frameworks",
         items: [
             { name: "ISO 27001", href: "/services/iso-27001" },
-            { name: "TISAX", href: "/services#tisax" },
+            { name: "TISAX", href: "/services/tisax" },
             { name: "NIS2", href: "/services#nis2" },
             { name: "DORA", href: "/services#dora" },
             { name: "GDPR", href: "/services#gdpr" },
